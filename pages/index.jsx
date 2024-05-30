@@ -54,6 +54,7 @@ const Market = (props) => {
     fetchBracelets();
   }, []);
   return (
+
     <ShopLayout1 topbarBgColor={theme.palette.grey[900]}>
       <SEO title="FourGems" />
       <Box bgcolor="#FFFFFF">
