@@ -16,6 +16,7 @@ import api from "utils/__api__/market-2";
 import {useRouter} from "next/router"; // =======================================================
 import { H1 } from "components/Typography";
 import {useEffect} from "react";
+import axios from "axios";
 // =======================================================
 const Market = (props) => {
   const theme = useTheme();
@@ -28,6 +29,29 @@ const Market = (props) => {
         router.push('/login');
       }
     }
+  }, []);
+
+  useEffect(() => {
+    const fetchBracelets = async () => {
+      try {
+        const response = await axios.get('https://www.goldapi.io/api/XAU/USD', {
+          headers: {
+            'x-access-token': 'goldapi-1g1hjslw9du1eh-io', // Thay thế bằng API key thực tế của bạn
+          },
+        });
+        console.log(response.data); // Ghi log dữ liệu phản hồi vào console
+        if (response.data && response.data.price) { // Kiểm tra nếu có thuộc tính 'price'
+          setGoldType(response.data);
+          setGoldPrice(response.data.currency);
+        } else {
+          setError('Không thể lấy giá vàng.');
+        }
+      } catch (error) {
+        console.error('Lỗi khi lấy giá vàng:', error);
+      }
+    };
+
+    fetchBracelets();
   }, []);
   return (
     <ShopLayout1 topbarBgColor={theme.palette.grey[900]}>

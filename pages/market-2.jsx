@@ -19,6 +19,7 @@ const Market = (props) => {
   const theme = useTheme();
   // destructuring js
   const {brands} = props
+
   return (
     <ShopLayout1 topbarBgColor={theme.palette.grey[900]}>
       <SEO title="FourGems" />
@@ -42,7 +43,7 @@ const Market = (props) => {
         <Section5 data={props.electronicsProducts} />
 
         {/* OFFER BANNER */}
-        <Section6 />
+        {/*<Section6 />*/}
 
         {/* PRODUCT ROW WITH MEN'S FASHION CATEFORY LIST */}
         <Section5 data={props.menFashionProducts} />
