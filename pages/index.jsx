@@ -30,6 +30,7 @@ const Market = (props) => {
     }
   }, []);
   return (
+
     <ShopLayout1 topbarBgColor={theme.palette.grey[900]}>
       <SEO title="FourGems" />
       <Box bgcolor="#FFFFFF">
