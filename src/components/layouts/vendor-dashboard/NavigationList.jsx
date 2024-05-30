@@ -155,7 +155,7 @@ export const navigations = [
     path: "/vendor/site-settings",
   },
   {
-    name: "Logout",
+    name: "Home",
     icon: duotone.Session,
     path: "/",
   },

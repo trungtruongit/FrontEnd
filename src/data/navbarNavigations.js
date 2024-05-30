@@ -166,11 +166,52 @@ const navbarNavigations = [
   //   // ],
   // },
   {
-
     megaMenu: false,
     megaMenuWithSub: false,
     title: "Report",
     url: "/vendor/dashboard"
+    // child: [
+    //   {
+    //     title: "Dashboard",
+    //     url: "/vendor/dashboard",
+    //   },
+    //   {
+    //     title: "Products",
+    //     child: [
+    //       {
+    //         title: "All products",
+    //         url: "/admin/products",
+    //       },
+    //       {
+    //         title: "Add/Edit product",
+    //         url: "/admin/products/248104",
+    //       },
+    //     ],
+    //   },
+    //   {
+    //     title: "Orders",
+    //     child: [
+    //       {
+    //         title: "All orders",
+    //         url: "/admin/orders",
+    //       },
+    //       {
+    //         title: "Order details",
+    //         url: "/admin/orders/248104",
+    //       },
+    //     ],
+    //   },
+    //   {
+    //     title: "Profile",
+    //     url: "/vendor/account-setting",
+    //   },
+    // ],
+  },
+  {
+    megaMenu: false,
+    megaMenuWithSub: false,
+    title: "Logout",
+    url: "/login"
     // child: [
     //   {
     //     title: "Dashboard",

@@ -11,6 +11,7 @@ import EyeToggleButton from "./EyeToggleButton";
 import {FlexBox, FlexRowCenter} from "components/flex-box";
 import axios from "axios";
 import {useRouter} from "next/router";
+import {jwtDecode} from "jwt-decode";
 
 const fbStyle = {
     background: "#3B5998",
@@ -66,7 +67,15 @@ const Login = () => {
             if (response.data.data !== "") {
                 console.log("successfully logged in")
                 localStorage.setItem('token', response.data.data);
-                nav.push("/")
+                const token = localStorage.getItem('token')
+                const decoded = jwtDecode(token);
+                console.log(decoded.role);
+                if (decoded.role === "staff") {
+                    nav.push("/")
+                } else {
+                    nav.push("/vendor/dashboard")
+                }
+
             } else {
                 console.log("error")
             }
